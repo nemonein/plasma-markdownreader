@@ -2,7 +2,6 @@
 
 A small, read-only Markdown viewer for your desktop or panel.
 Point it at a folder and flip through every Markdown file in it, one page at a time.
-I needed this just for me. It was possible by AI's assistance.
 
 ![Plasma 6](https://img.shields.io/badge/Plasma-6.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -190,6 +189,27 @@ kquitapp6 plasmashell && kstart plasmashell
 
 To watch QML warnings while iterating, run plasmashell from a terminal and read
 its output, or use `journalctl --user -b -f`.
+
+### Commit attribution
+
+This repository ships a `commit-msg` hook that appends
+
+```
+Co-authored-by: DeepSeek <noreply@deepseek.com>
+```
+
+to every commit message. Enable it once per clone:
+
+```bash
+./setup-git.sh           # git config core.hooksPath .githooks
+./setup-git.sh --unset   # turn it off again
+```
+
+The hook skips messages that already contain the trailer, and `git commit
+--no-verify` bypasses it. Override the identity with the
+`MARKDOWN_READER_COAUTHOR_NAME` / `MARKDOWN_READER_COAUTHOR_EMAIL`
+environment variables. Since it is enabled through local git config, it applies
+to your clone only — other contributors can opt in the same way.
 
 ## Attribution
 

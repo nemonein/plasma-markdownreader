@@ -419,16 +419,6 @@ PlasmoidItem {
             spacing: Kirigami.Units.smallSpacing
             visible: root.files.length > 0
 
-            QQC2.ToolButton {
-                icon.name: "go-previous"
-                enabled: root.files.length > 1
-                focusPolicy: Qt.NoFocus
-                onClicked: root.previous()
-
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.text: root.tr("이전 문서 (←)", "Previous document (←)")
-            }
-
             ColumnLayout {
                 Layout.fillWidth: true
                 spacing: 0
@@ -466,6 +456,16 @@ PlasmoidItem {
 
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.text: root.tr("새로 고침", "Reload")
+            }
+
+            QQC2.ToolButton {
+                icon.name: "go-previous"
+                enabled: root.files.length > 1
+                focusPolicy: Qt.NoFocus
+                onClicked: root.previous()
+
+                QQC2.ToolTip.visible: hovered
+                QQC2.ToolTip.text: root.tr("이전 문서 (←)", "Previous document (←)")
             }
 
             QQC2.ToolButton {
