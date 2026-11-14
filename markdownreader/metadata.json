@@ -1,0 +1,26 @@
+{
+    "KPlugin": {
+        "Id": "com.github.plasma-markdownreader",
+        "Name": "Markdown Reader",
+        "Name[ko]": "마크다운 리더",
+        "Description": "Read Markdown files in a folder, one page at a time",
+        "Description[ko]": "폴더 안의 Markdown 파일을 한 번에 하나씩 넘겨 보기",
+        "Icon": "text-markdown",
+        "Category": "Utilities",
+        "License": "MIT",
+        "Version": "0.3.0",
+        "Authors": [
+            {
+                "Name": "박정"
+            }
+        ],
+        "EnabledByDefault": true,
+        "FormFactors": [
+            "desktop",
+            "tablet",
+            "handset"
+        ]
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
