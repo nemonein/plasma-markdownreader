@@ -2,6 +2,8 @@
 
 지정한 폴더의 Markdown 파일을 **한 번에 하나씩, 좌우로 넘기며** 읽기 전용으로 보는 위젯입니다.
 편집 기능은 없습니다.
+저 혼자 쓰려고 AI 도움을 받아 만든 프로그램입니다.
+혹시 필요하신 분 있으실까 하여 올려둡니다.
 
 - 대상: Plasma 6.8 / Qt 6 / KDE Frameworks 6
 - C++ 빌드 없음 — QML 패키지 하나이고 `kpackagetool6`로 설치합니다.
@@ -146,6 +148,22 @@ journalctl --user -b -o cat | grep -iE 'PageRow|AppletConfiguration|markdownread
 ```
 
 QML 오류가 나오면 그 메시지를 그대로 알려주시면 바로 고치겠습니다.
+
+## Attribution
+
+- **작성자 / 관리자:** [nemonein](https://github.com/nemonein)
+- **AI 지원:** DeepSeek (모델 `deepseek-flash`) — 초기 QML 구현, Markdown 렌더링·키보드
+  포커스·패널 동작 반복 개선, 설치 스크립트와 터미널 실행 스크립트 작성에 사용.
+
+AI가 함께 작성한 커밋은 이력에 `Co-authored-by` trailer로 표시합니다.
+
+```
+Co-authored-by: DeepSeek <noreply@deepseek.com>
+```
+
+DeepSeek는 이 프로젝트에 연결된 공개 GitHub 계정이 없어, GitHub UI에서는 프로필 링크가
+아닌 공동 작성자 텍스트로만 표시됩니다. 모든 변경은 관리자가 검토·실행·테스트하며,
+코드와 라이선스에 대한 책임은 관리자에게 있습니다.
 
 ## 제거
 

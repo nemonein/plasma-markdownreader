@@ -2,6 +2,7 @@
 
 A small, read-only Markdown viewer for your desktop or panel.
 Point it at a folder and flip through every Markdown file in it, one page at a time.
+I needed this just for me. It was possible by AI's assistance.
 
 ![Plasma 6](https://img.shields.io/badge/Plasma-6.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -189,6 +190,24 @@ kquitapp6 plasmashell && kstart plasmashell
 
 To watch QML warnings while iterating, run plasmashell from a terminal and read
 its output, or use `journalctl --user -b -f`.
+
+## Attribution
+
+- **Author / maintainer:** [nemonein](https://github.com/nemonein)
+- **AI assistance:** DeepSeek (model `deepseek-flash`) — used for the initial QML
+  implementation, iteration on Markdown rendering, keyboard focus handling and
+  panel behaviour, plus the installer and terminal-launcher scripts.
+
+AI-assisted commits are marked in the history with a `Co-authored-by` trailer:
+
+```
+Co-authored-by: DeepSeek <noreply@deepseek.com>
+```
+
+DeepSeek has no public GitHub account linked to this project, so it appears as a
+plain co-author line rather than a linked profile in the GitHub UI. Every change
+is reviewed, built and tested by the maintainer, who is responsible for the code
+and its licensing.
 
 ## License
 
