@@ -9,8 +9,12 @@
 ## 설치
 
 ```bash
-cd ~/KDE_Widget/v0.3   # 이 폴더
+git clone https://github.com/nemonein/plasma-markdownreader.git
+cd plasma-markdownreader
 ./install.sh
+systemctl --user restart plasma-plasmashell.service
+또는,
+kquitapp6 plasmashell && kstart plasmashell
 ```
 
 그다음 데스크톱(또는 패널) 우클릭 → **위젯 추가** → "Markdown Reader"를 끌어다 놓습니다.
@@ -70,13 +74,13 @@ Plasma/Kirigami 쪽 문제**이므로, 이 패키지는 설정 UI를 위젯 내�
 
 ## 사용
 
-| 동작 | 방법 |
-| --- | --- |
-| 다음 문서 | `→` 키, 헤더의 `>` 버튼 |
-| 이전 문서 | `←` 키, 헤더의 `<` 버튼 |
-| 처음/마지막에서 | 순환합니다 (마지막 다음은 처음) |
-| 긴 문서 스크롤 | `↑` `↓` 키(약 3줄씩) / 마우스 휠 / 스크롤바 / 드래그 |
-| 목록 갱신 | 헤더의 새로 고침 버튼, 또는 15초마다 자동 |
+| 동작                   | 방법                                                   |
+| ---------------------- | ------------------------------------------------------ |
+| 다음 문서              | `→` 키, 헤더의 `>` 버튼                                |
+| 이전 문서              | `←` 키, 헤더의 `<` 버튼                                |
+| 처음/마지막에서        | 순환합니다 (마지막 다음은 처음)                        |
+| 긴 문서 스크롤         | `↑` `↓` 키(약 3줄씩) / 마우스 휠 / 스크롤바 / 드래그   |
+| 목록 갱신              | 헤더의 새로 고침 버튼, 또는 15초마다 자동              |
 | 폴더를 터미널에서 열기 | 위젯 우클릭 → 컨텍스트 메뉴 → "폴더를 터미널에서 열기" |
 
 원본 파일의 **줄바꿈을 그대로** 표시합니다. Markdown 표준은 줄바꿈 하나를 공백으로 합치지만,
@@ -108,6 +112,7 @@ markdownreader/
   (`QQuickTextEdit`는 `QTextDocument::setMarkdown`으로 그립니다.)
 
 참고 소스:
+
 - plasma5support executable 엔진: <https://github.com/KDE/plasma5support/blob/master/src/dataengines/executable/executable.cpp>
 - QML 모듈 URI `org.kde.plasma.plasma5support`: <https://github.com/KDE/plasma5support/blob/master/src/declarativeimports/CMakeLists.txt>
 - Qt `TextEdit`의 markdown 경로: <https://github.com/qt/qtdeclarative/blob/6.9/src/quick/items/qquicktextedit.cpp>

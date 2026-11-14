@@ -30,9 +30,12 @@ Point it at a folder and flip through every Markdown file in it, one page at a t
 ## Installation
 
 ```bash
-git clone https://github.com/<your-account>/plasma-markdownreader.git
+git clone https://github.com/nemonein/plasma-markdownreader.git
 cd plasma-markdownreader
 ./install.sh
+systemctl --user restart plasma-plasmashell.service
+OR,
+kquitapp6 plasmashell && kstart plasmashell
 ```
 
 The script installs the package to
@@ -55,7 +58,7 @@ kquitapp6 plasmashell && kstart plasmashell
 
 ## Usage
 
-1. Right-click your desktop or panel → **Add Widgets** → *Markdown Reader*.
+1. Right-click your desktop or panel → **Add Widgets** → _Markdown Reader_.
 2. Open the widget's settings (gear icon in the header) and enter a folder,
    for example `~/Documents/notes`.
    When no folder is set yet, the path field is shown directly in the widget.
@@ -63,11 +66,11 @@ kquitapp6 plasmashell && kstart plasmashell
 
 ### Keyboard
 
-| Key | Action |
-| --- | --- |
-| `←` / `→` | previous / next document |
-| `↑` / `↓` | scroll about three lines |
-| mouse wheel, drag, scrollbar | free scrolling |
+| Key                          | Action                   |
+| ---------------------------- | ------------------------ |
+| `←` / `→`                    | previous / next document |
+| `↑` / `↓`                    | scroll about three lines |
+| mouse wheel, drag, scrollbar | free scrolling           |
 
 In a panel, click the **MD** icon to open the popup; the document view takes
 keyboard focus as soon as the popup is shown.
@@ -76,11 +79,11 @@ keyboard focus as soon as the popup is shown.
 
 All settings live inside the widget (gear button in the header):
 
-| Setting | Description |
-| --- | --- |
-| Folder | Markdown folder to read (`~` and `$HOME` are expanded) |
-| Sort | by file name, or by modification time (newest first) |
-| Font size | point size of the document text |
+| Setting   | Description                                            |
+| --------- | ------------------------------------------------------ |
+| Folder    | Markdown folder to read (`~` and `$HOME` are expanded) |
+| Sort      | by file name, or by modification time (newest first)   |
+| Font size | point size of the document text                        |
 
 > The KDE configuration dialog intentionally has **no General page** for this
 > widget: on current Plasma/Kirigami builds the category page can come up empty
@@ -90,7 +93,7 @@ All settings live inside the widget (gear button in the header):
 ### Open the folder in a terminal
 
 Right-click the widget → **Open folder in terminal**. The folder is opened using
-the terminal configured in *System Settings → Default Applications*, read from
+the terminal configured in _System Settings → Default Applications_, read from
 `kdeglobals [General] TerminalApplication` / `TerminalService`, with
 `xdg-terminal-exec`, `konsole`, and `x-terminal-emulator` as fallbacks.
 
@@ -104,7 +107,7 @@ function tr(ko, en) { return root.isKorean ? ko : en; }
 ```
 
 Korean (`ko_*`) shows Korean strings; every other locale shows English.
-The widget name and description in the *Add Widgets* list follow the same rule
+The widget name and description in the _Add Widgets_ list follow the same rule
 through the `Name[ko]` / `Description[ko]` entries in `metadata.json`.
 
 `install.sh` uses the same rule (reading `LC_ALL`, then `LC_MESSAGES`, then
