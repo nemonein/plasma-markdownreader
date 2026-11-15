@@ -412,12 +412,39 @@ PlasmoidItem {
         implicitHeight: Kirigami.Units.gridUnit * 22
         spacing: 0
 
-        RowLayout {
+        // 헤더 전체를 감싸는 영역: 휠 위 = 이전 문서, 아래 = 다음 문서.
+        // 버튼/라벨을 이 MouseArea의 자식으로 두면, 그 위에서 생긴 휠이 부모로 전파됩니다.
+        MouseArea {
+            id: headerArea
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.smallSpacing
             Layout.bottomMargin: 0
-            spacing: Kirigami.Units.smallSpacing
+            Layout.preferredHeight: headerRow.implicitHeight
             visible: root.files.length > 0
+            acceptedButtons: Qt.NoButton
+            property real accum: 0
+
+            onWheel: function (wheel) {
+                let delta = wheel.angleDelta.y;
+                if (delta === 0) {
+                    // 터치패드처럼 픽셀 단위로 오는 경우
+                    delta = wheel.pixelDelta.y * 3;
+                }
+                headerArea.accum += delta;
+                if (headerArea.accum <= -120) {
+                    headerArea.accum = 0;
+                    root.next();
+                } else if (headerArea.accum >= 120) {
+                    headerArea.accum = 0;
+                    root.previous();
+                }
+                wheel.accepted = true;
+            }
+
+            RowLayout {
+                id: headerRow
+                anchors.fill: parent
+                spacing: Kirigami.Units.smallSpacing
 
             ColumnLayout {
                 Layout.fillWidth: true
@@ -476,6 +503,7 @@ PlasmoidItem {
 
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.text: root.tr("다음 문서 (→)", "Next document (→)")
+            }
             }
         }
 
