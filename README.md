@@ -71,7 +71,7 @@ kquitapp6 plasmashell && kstart plasmashell
 | `←` / `→`                    | previous / next document |
 | `↑` / `↓`                    | scroll about three lines |
 | mouse wheel, drag, scrollbar | free scrolling           |
-| wheel over the header        | previous / next document |
+| wheel up / down over the header | next / previous document |
 
 In a panel, click the **MD** icon to open the popup; the document view takes
 keyboard focus as soon as the popup is shown.

@@ -433,10 +433,10 @@ PlasmoidItem {
                 headerArea.accum += delta;
                 if (headerArea.accum <= -120) {
                     headerArea.accum = 0;
-                    root.next();
+                    root.previous();   // 아래로 = 이전
                 } else if (headerArea.accum >= 120) {
                     headerArea.accum = 0;
-                    root.previous();
+                    root.next();       // 위로 = 다음
                 }
                 wheel.accepted = true;
             }
